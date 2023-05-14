@@ -10,9 +10,15 @@ library(dplyr)
 library(readr)     
 library(partykit)
 library(vcd)
+
 # ------ prepare data -------
 
-setwd("/Users/jiaqiguo/Desktop/Data_Analysis11/R/")
+# Note to examiners:
+# Please download the 'RQ3_Tree.csv' file from the GitHub repository
+# (https://github.com/jiaqi-feng-guo/dui-constructions/blob/main/Input_Data/RQ3_Tree.csv)
+# and place it in the same directory as this R script. If you choose to place it in a different directory,
+# replace "RQ3_Tree.csv" in the read_csv function with the correct path to the file.
+
 
 data <- read_csv("RQ3_Tree.csv")
 
