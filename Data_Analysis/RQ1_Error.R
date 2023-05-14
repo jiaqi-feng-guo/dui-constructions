@@ -10,7 +10,7 @@ library(nnet)
 
 
 # Read data
-data <- read_excel("/Users/jiaqiguo/Desktop/Data_Analysis11/R/Error/RQ2_Error.xlsx", sheet = "Error")
+data <- read_csv("RQ1_Erros.csv")
 
 data$Error <- ifelse(data$Error == "Error", 1, 0)
 data$Mode <- as.factor(data$Mode)
