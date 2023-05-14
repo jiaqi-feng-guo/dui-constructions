@@ -21,9 +21,15 @@ library(effects)
 library(vcd)
 library(pscl)
 
-##read data
-data <- read.csv("/Users/jiaqiguo/Desktop/Data_Analysis11/R/RQ3_NS_NNS/NS_NNS.csv", header = TRUE)
 
+# Note to examiners:
+# Please download the 'RQ3_Native_Model.csv' file from the GitHub repository
+# (https://github.com/jiaqi-feng-guo/dui-constructions/blob/main/Input_Data/RQ3_Native_Model.csv)
+# and place it in the same directory as this R script. If you choose to place it in a different directory,
+# replace "RQ3_Native_Model.csv" in the read_csv function with the correct path to the file.
+
+##read data
+data <- read.csv("RQ3_Native_Model.csv", header = TRUE)
 
 
 ##clean data
@@ -147,7 +153,7 @@ ggsave("my_plot_native.png", plot = p, width = 10, height = 6, dpi = 300)
 
 
 
-# Visualisationx
+# Visualisation
 plot_model <- function(model, var.list, save.path, ci=TRUE){
   pr <- ggpredict(model, var.list)
   pg <- plot(pr, ci = ci) + 
