@@ -9,8 +9,14 @@ library(lme4)
 library(nnet)
 
 
+# Note to examiners:
+# Please download the 'RQ1_Error.csv' file from the GitHub repository
+# (https://github.com/jiaqi-feng-guo/dui-constructions/blob/main/Input_Data/RQ1_Error.csv)
+# and place it in the same directory as this R script. If you choose to place it in a different directory,
+
+
 # Read data
-data <- read_csv("RQ1_Erros.csv")
+data <- read_csv("RQ1_Erros.csv")   # replace "RQ1_Error.csv" in the read_csv function with the correct path to the file.
 
 data$Error <- ifelse(data$Error == "Error", 1, 0)
 data$Mode <- as.factor(data$Mode)
@@ -43,8 +49,7 @@ emm_proficiency_response <- summary(emm_proficiency, type = "response")
 # Display the results
 print(emm_proficiency_response)
 
-
-
+# ------ Visualisation
 
 error_plot <- ggplot(emm_proficiency_response_df, aes(x = Proficiency, y = prob, ymin = asymp.LCL, ymax = asymp.UCL, color = Proficiency)) +
   geom_point(size = 4, shape = 21, fill = "white") +
@@ -66,15 +71,6 @@ ggsave("error_types_plot.png", plot = error_plot, width = 8, height = 6, dpi = 3
 
 
 confint(error_model, method = "Wald")
-
-
-
-
-
-
-
-
-
 
 # ---------- build a full model ------------- 
 
@@ -124,8 +120,6 @@ pairwise_comparisons <- pairs(emm_means)
 
 # Display the results with p-values and apply Bonferroni adjustment
 summary(pairwise_comparisons, type = "response", adjust = "bonferroni")
-
-
 
 
 library(ggplot2)
