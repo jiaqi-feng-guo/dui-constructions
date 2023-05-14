@@ -24,13 +24,14 @@ library (margins)
 library(effects)
 # Install and load broom.mixed
 
-
+# Note to examiners:
+# Please download the 'RQ3_Textbook_Model.csv' file from the GitHub repository
+# (https://github.com/jiaqi-feng-guo/dui-constructions/blob/main/Input_Data/RQ3_Textbook_Model.csv)
+# and place it in the same directory as this R script. If you choose to place it in a different directory,
+# replace "RQ3_Textbook_Model.csv" in the read_csv function with the correct path to the file.
 
 ##read data
-data <- read.csv("/Users/jiaqiguo/Desktop/Data_Analysis11/R/RQ3_TXT_NNS/TXT_NNS.csv", header = TRUE)
-
-setwd("/Users/jiaqiguo/Desktop/Data_Analysis11/R/RQ3_TXT_NNS")
-
+data <- read.csv("RQ3_Textbook_Model.csv", header = TRUE)
 
 
 ##clean data
